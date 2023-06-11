@@ -21,7 +21,7 @@ Desktop:
 
 Mobile:
 
-![mobile version preview](./project-preview/Mobile-1.png)
+![mobile version preview](./project-preview/mobile-1.png)
 
 [Check the full project on Figma](https://www.figma.com/file/K0jRHRRglZOLEFHS8w4QII/MovieTime?type=design&node-id=0%3A1&t=NXPpmJEwWlOnn0fa-1)
 
