@@ -17,6 +17,6 @@ Definitely! Once the main functionality is done, I plan to add searching by genr
 
 - The app's layout and basic mechanism was inpired by the [_react-tv-show-adviser_](https://github.com/codiku/react-tv-show-adviser) by [**Robin Lebhar**](https://github.com/codiku), which is a project realized during his course on _Udemy_.
 
-  - I redesigned this project using Figma and wrote all the code from scratch.
+  - I redesigned this project using [Figma](https://www.figma.com/file/K0jRHRRglZOLEFHS8w4QII/MovieTime?type=design&node-id=0%3A1&t=NXPpmJEwWlOnn0fa-1) and wrote all the code from scratch.
 
 - [Popcorn icon](https://www.flaticon.com/free-icons/popcorn) (favicon) created by [Adib Sulthon](https://www.flaticon.com/authors/adib-sulthon) - Flaticon</a>
