@@ -6,11 +6,24 @@ _Movie Time_ is a web app that may help you find interesting movies.
 
 ## Table of Contents
 
+- [Preview](#features)
 - [Features](#features)
 - [Technologies](#technologies)
 - [Planned Features](#planned-features)
 - [License](#license)
 - [Credits](#credits)
+
+## Preview
+
+Desktop:
+
+![desktop version preview](./project-preview/Desktop-1.png)
+
+Mobile:
+
+![mobile version preview](./project-preview/Mobile-1.png)
+
+[Check the full project on Figma](https://www.figma.com/file/K0jRHRRglZOLEFHS8w4QII/MovieTime?type=design&node-id=0%3A1&t=NXPpmJEwWlOnn0fa-1)
 
 ## Features
 
