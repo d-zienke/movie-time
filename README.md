@@ -2,6 +2,8 @@
 
 _Movie Time_ is a web app that may help you find interesting movies.
 
+**Project is not done yet**
+
 ## Table of Contents
 
 - [Features](#features)
@@ -12,10 +14,9 @@ _Movie Time_ is a web app that may help you find interesting movies.
 
 ## Features
 
-- Everytime you open the app, it randomly picks a film and displays similar productions below.
-- You can also search by title or display a list of the newest, most popular or upcoming movies.
+**Project has no interactivity yet. It consists of static data only.**
 
-All the data comes from [**The Movie Database (TMDB) API**](https://developer.themoviedb.org/docs)
+All the data will come from [**The Movie Database (TMDB) API**](https://developer.themoviedb.org/docs)
 
 ## Technologies
 
@@ -27,6 +28,9 @@ All the data comes from [**The Movie Database (TMDB) API**](https://developer.th
 
 ## Planned Features
 
+- on load, display a randomly picked movie and similar productions below
+- searching by title
+- displaying list of the newest, most popular or upcoming movies
 - searching by genre
 - browsing TV shows
 
