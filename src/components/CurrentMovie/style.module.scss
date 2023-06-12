@@ -5,11 +5,13 @@
   flex-grow: 2;
 
   color: white;
-  background: no-repeat center/cover url(https://images4.alphacoders.com/860/thumb-1920-86098.jpg);
+  // background: no-repeat center/cover url(https://images4.alphacoders.com/860/thumb-1920-86098.jpg);
 
   &__header {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    padding-left: 2.5rem;
     height: 20%;
     padding-top: 3.4rem;
     background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
@@ -17,25 +19,24 @@
 
   &__title {
     font-size: 2.5rem;
-    padding-left: 2.5rem;
   }
 
-  &__details {
-    display: flex;
-    flex-direction: column;
-    padding-right: 2.5rem;
+  // &__details {
+  //   display: flex;
+  //   flex-direction: column;
+  //   padding-right: 2.5rem;
 
-    &_top {
-      display: flex;
-      column-gap: 1.25rem;
-    }
+  //   &_top {
+  //     display: flex;
+  //     column-gap: 1.25rem;
+  //   }
 
-    &_btm {
-      display: flex;
-      column-gap: .6rem;
-      font-size: 1.25rem;
-    }
-  }
+  //   &_btm {
+  //     display: flex;
+  //     column-gap: .6rem;
+  //     font-size: 1.25rem;
+  //   }
+  // }
 
   &__stars {
     display: flex;
