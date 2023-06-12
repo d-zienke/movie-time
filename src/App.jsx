@@ -23,7 +23,7 @@ export default function App() {
 		<div className="app">
 			<Header />
 			<CurrentMovie movie={currentMovie} />
-			<Recommendations />
+			<Recommendations movieId={currentMovie.id} />
 		</div>
 	);
 }
