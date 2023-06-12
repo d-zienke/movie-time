@@ -1,6 +1,6 @@
 import "./App.scss";
 import Movies from "./api/get-movies";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Header } from "./components/Header/Header";
 import Recommendations from "./components/Recommendations/Recommendations";
 import CurrentMovie from "./components/CurrentMovie/CurrentMovie";
@@ -15,10 +15,14 @@ export default function App() {
 
 	const [currentMovie, setCurrentMovie] = useState("");
 
+	useEffect(() => {
+		getTopRatedMovies();
+	}, []);
+
 	return (
 		<div className="app">
 			<Header />
-			<CurrentMovie />
+			<CurrentMovie movie={currentMovie} />
 			<Recommendations />
 		</div>
 	);
