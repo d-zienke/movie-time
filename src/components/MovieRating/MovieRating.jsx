@@ -53,6 +53,7 @@ export default function MovieRating({ ratingData }) {
 		<>
 			<div className={s.movie_rating}>
 				<div className={s.movie_rating__stars}>{starsElement}</div>
+				<span>{ratingData.rating}/10</span>
 				<span>{`(${ratingData.votesCount} votes)`}</span>
 			</div>
 		</>

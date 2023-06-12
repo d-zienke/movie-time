@@ -5,8 +5,12 @@ import MovieRating from "../MovieRating/MovieRating";
 export default function CurrentMovie({ movie }) {
 	function getYear() {
 		const fullDate = movie.release_date;
-		const year = fullDate.split("-")[0];
-		return year;
+		if (fullDate) {
+			const year = fullDate.split("-")[0];
+			return `(${year})`;
+		} else {
+			return "";
+		}
 	}
 
 	function getBackdrop() {
@@ -23,8 +27,8 @@ export default function CurrentMovie({ movie }) {
 				}}>
 				<div className={s.movie__header}>
 					<div className={s.movie__title}>
-						{movie.title}
-						{` (2023)`}
+						<span>{movie.title}</span>
+						<span>{getYear()}</span>
 					</div>
 					<MovieRating
 						ratingData={{
