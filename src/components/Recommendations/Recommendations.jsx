@@ -1,19 +1,40 @@
+import { useEffect, useState } from "react";
+import ApiConfig from "../../api/config.json";
+import Movies from "../../api/get-movies";
 import SimilarMoviesItem from "../SimilarMoviesItem/SimilarMoviesItem";
 import s from "./style.module.scss";
 
-export default function Recommendations() {
+export default function Recommendations({ movieId }) {
+	async function getRecommendedMovies(id) {
+		const data = await Movies.fetchRecommended(id);
+		renderRecommendedMovies(data, 10);
+	}
+
+	function renderRecommendedMovies(array) {
+		const data = array.slice(0, 10);
+		const elements = data.map((item) => {
+			return (
+				<SimilarMoviesItem
+					key={item.id}
+					title={item.title}
+					backdrop={`${ApiConfig.images.secure_base_url}w300${item.backdrop_path}`}
+				/>
+			);
+		});
+		setRecommended(elements);
+	}
+
+	const [recommended, setRecommended] = useState("");
+
+	useEffect(() => {
+		getRecommendedMovies(movieId);
+	}, [movieId]);
+
 	return (
 		<>
 			<section className={s.recommendations}>
 				<div className={s.heading}>You may also like:</div>
-				<div className={s.similar_movies}>
-					<SimilarMoviesItem title="https://c4.wallpaperflare.com/wallpaper/467/165/234/the-lord-of-the-rings-the-lord-of-the-rings-the-two-towers-wallpaper-preview.jpg" />
-					<SimilarMoviesItem title="https://c4.wallpaperflare.com/wallpaper/982/520/975/the-lord-of-the-rings-the-return-of-the-king-wallpaper-preview.jpg" />
-					<SimilarMoviesItem title="https://images4.alphacoders.com/289/289924.jpg" />
-					<SimilarMoviesItem title="https://image.tmdb.org/t/p/original/jOh79POQu4hyVIseUxdQxTW7vOf.jpg" />
-					<SimilarMoviesItem title="https://image.tmdb.org/t/p/original/ouusulxHOOXHexgDeQyDbMWZzJd.jpg" />
-					<SimilarMoviesItem title="https://wrong-url.jpg" />
-				</div>
+				<div className={s.similar_movies}>{recommended}</div>
 			</section>
 		</>
 	);
