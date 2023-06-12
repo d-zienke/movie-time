@@ -27,9 +27,10 @@ Mobile:
 
 ## Features
 
-**Project has no interactivity yet. It consists of static data only.**
+- on load, display the most popular movie
+- display movies similar to the currently selected one
 
-All the data will come from [**The Movie Database (TMDB) API**](https://developer.themoviedb.org/docs)
+All the data come from [**The Movie Database (TMDB) API**](https://developer.themoviedb.org/docs)
 
 ## Technologies
 
@@ -41,7 +42,7 @@ All the data will come from [**The Movie Database (TMDB) API**](https://develope
 
 ## Planned Features
 
-- on load, display a randomly picked movie and similar productions below
+- on load, display a _randomly picked_ movie and similar productions below
 - searching by title
 - displaying list of the newest, most popular or upcoming movies
 - searching by genre
