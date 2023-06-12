@@ -36,7 +36,9 @@ export default function App() {
 		<div className="app">
 			<Header />
 			{currentMovie && <CurrentMovie movie={currentMovie} />}
-			{recommended && <Recommendations movies={recommended} />}
+			{recommended && (
+				<Recommendations movies={recommended} changeMovie={setCurrentMovie} />
+			)}
 		</div>
 	);
 }
