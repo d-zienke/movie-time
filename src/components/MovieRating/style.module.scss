@@ -1,0 +1,15 @@
+.movie_rating {
+  display: flex;
+  column-gap: .6rem;
+  font-size: 1.25rem;
+  
+  &__stars {
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  &__star {
+    max-height: 1.9rem;
+    width: auto;
+  }
+}

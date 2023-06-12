@@ -1,0 +1,28 @@
+.recommendations {
+  flex-grow: 1;
+  height: 10rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  background-color: #000000;
+  color: #ffffff;
+
+  .heading {
+    margin-left: 2.5rem;
+    font-family: "Oswald", sans-serif;
+    letter-spacing: 0.05em;
+  }
+
+  .similar_movies {
+    display: flex;
+    max-width: 100%;
+    column-gap: 1.25rem;
+    padding-top: 1.25rem;
+    padding-bottom: 1.9rem;
+    padding-inline: 2.5rem;
+    max-height: 100%;
+    overflow: auto;
+  }
+}

@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 2.5rem;
+  // padding-bottom: 0.5rem;
+  max-height: 6.6rem;
+
+  background-color: black;
+
+  &__logo {
+    height: 4.1rem;
+    width: auto;
+    padding-left: 4rem;
+    cursor: pointer;
+  }
+
+  &__menu_icon {
+    height: 3.1rem;
+    padding-right: 3.75rem;
+    cursor: pointer;
+  }
+}

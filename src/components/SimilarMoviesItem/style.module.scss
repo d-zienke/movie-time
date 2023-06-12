@@ -1,0 +1,13 @@
+  .similar_movie {
+    display: inline-block;
+    background-color: black;
+    box-shadow: 1px 1px 10px rgba(94, 94, 94, 0.295);
+    min-width: 300px;
+    cursor: pointer;
+
+    & img {
+      height: 100%;
+      width: 300px;
+      object-fit: cover;
+    }
+  }

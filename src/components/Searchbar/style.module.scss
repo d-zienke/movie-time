@@ -1,0 +1,33 @@
+.searchbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 10rem;
+  width: 40%;
+  height: 3.75rem;
+
+  &__input {
+    background-color: rgba(206, 206, 206, 0.5);
+    border-radius: 3rem;
+    outline: none;
+    border: none;
+    padding-block: .7rem;
+    padding-inline: 2rem;
+    width: 100%;
+    font-size: 1.5rem;
+    color: #ffffff;
+
+    &::placeholder {
+      color: #cecece;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    right: 1.5rem;
+    height: 2.5rem;
+    width: auto;
+    cursor: pointer;
+  }
+}
