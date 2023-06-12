@@ -27,11 +27,7 @@ export default function MovieRating({ ratingData }) {
 		// if exists, add half star to array
 		if (halfStar)
 			starsArray.push(
-				<img
-					key={`half-${i}`}
-					className={s.movie_rating__star}
-					src={starHalf}
-				/>
+				<img key={`half-0`} className={s.movie_rating__star} src={starHalf} />
 			);
 		// add empty stars to array
 		for (let i = 0; i < emptyStars; i++) {
