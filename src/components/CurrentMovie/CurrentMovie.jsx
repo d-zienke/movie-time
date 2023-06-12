@@ -1,29 +1,40 @@
+import ApiConfig from "../../api/config.json";
 import s from "./style.module.scss";
 import MovieRating from "../MovieRating/MovieRating";
 
-export default function CurrentMovie() {
+export default function CurrentMovie({ movie }) {
+	function getYear() {
+		const fullDate = movie.release_date;
+		const year = fullDate.split("-")[0];
+		return year;
+	}
+
+	function getBackdrop() {
+		const baseUrl = ApiConfig.images.secure_base_url;
+		return baseUrl + "original" + movie.backdrop_path;
+	}
+
 	return (
 		<>
-			<main className={s.movie}>
+			<main
+				className={s.movie}
+				style={{
+					background: `no-repeat center/cover url(${getBackdrop()})`,
+				}}>
 				<div className={s.movie__header}>
 					<div className={s.movie__title}>
-						Lord of the Rings: The Fellowship of the Ring
+						{movie.title}
+						{` (2023)`}
 					</div>
-					<div className={s.movie__details}>
-						<div className={s.movie__details_top}>
-							<span>2001</span>
-							<span>2h 58m</span>
-							<span>12+</span>
-						</div>
-						<MovieRating />
-					</div>
+					<MovieRating
+						ratingData={{
+							rating: movie.vote_average,
+							votesCount: movie.vote_count,
+						}}
+					/>
 				</div>
 				<div className={s.movie__footer}>
-					<div className={s.movie__description}>
-						A meek Hobbit from the Shire and eight companions set out on a
-						journey to destroy the powerful One Ring and save Middle-earth from
-						the Dark Lord Sauron.
-					</div>
+					<div className={s.movie__description}>{movie.overview}</div>
 					<a className={s.movie__button_outline}>show more</a>
 				</div>
 			</main>
