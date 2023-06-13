@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Header } from "./components/Header/Header";
 import Recommendations from "./components/Recommendations/Recommendations";
 import CurrentMovie from "./components/CurrentMovie/CurrentMovie";
+import SearchResults from "./components/SearchResults/SearchResults";
 
 export default function App() {
 	async function getTopRatedMovies() {
@@ -21,22 +22,43 @@ export default function App() {
 		}
 	}
 
+	async function searchMoviesByTitle(title) {
+		const moviesFound = await Movies.searchByTitle(title);
+		if (moviesFound.length > 0) {
+			setSearchMode(true);
+			setSearchResult(moviesFound);
+		}
+	}
+
 	const [currentMovie, setCurrentMovie] = useState("");
 	const [recommended, setRecommended] = useState("");
+	const [searchMode, setSearchMode] = useState("");
+	const [titleSearch, setTitleSearch] = useState("");
+	const [searchResult, setSearchResult] = useState("");
 
 	useEffect(() => {
 		getTopRatedMovies();
 	}, []);
 
 	useEffect(() => {
-		if (currentMovie) getRecommendedMovies(currentMovie.id);
+		if (currentMovie) {
+			getRecommendedMovies(currentMovie.id);
+			setSearchMode(false);
+		}
 	}, [currentMovie]);
+
+	useEffect(() => {
+		if (titleSearch !== "") searchMoviesByTitle(titleSearch);
+	}, [titleSearch]);
 
 	return (
 		<div className="app">
-			<Header />
-			{currentMovie && <CurrentMovie movie={currentMovie} />}
-			{recommended && (
+			<Header searchTitle={setTitleSearch} query={titleSearch} />
+			{searchMode && searchResult && (
+				<SearchResults movies={searchResult} changeMovie={setCurrentMovie} />
+			)}
+			{currentMovie && !searchMode && <CurrentMovie movie={currentMovie} />}
+			{recommended && !searchMode && (
 				<Recommendations movies={recommended} changeMovie={setCurrentMovie} />
 			)}
 		</div>

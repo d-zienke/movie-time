@@ -1,0 +1,18 @@
+.search_results_item {
+  display: flex;
+    width: 200px;
+    height: auto;
+    background-color: rgb(61, 61, 61);
+    box-shadow: 1px 1px 10px rgba(94, 94, 94, 0.295);
+    cursor: pointer;
+
+    &__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
+  }
