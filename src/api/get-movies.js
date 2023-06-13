@@ -1,7 +1,8 @@
 // NOTE: to have this work, create in your root directory `.env` file and put inside:
 // VITE_TMDB_ACCESS_TOKEN=your_access_token
 
-import { TEST_MODE } from "../config";
+// import { MIN_VOTES_COUNT, TEST_MODE } from "../config";
+import appSettings from "../config.json";
 import staticDataTopRated from "./static-data_top-rated.json";
 import staticDataRecommended from "./static-data_recommended.json";
 
@@ -15,7 +16,7 @@ const options = {
 
 export default class Movies {
 	static async fetchTopRated() {
-		if (TEST_MODE) return staticDataTopRated.results;
+		if (appSettings.TEST_MODE) return staticDataTopRated.results;
 
 		try {
 			const response = await fetch(
@@ -29,7 +30,7 @@ export default class Movies {
 		}
 	}
 	static async fetchRecommended(movieId) {
-		if (TEST_MODE) return staticDataRecommended.results;
+		if (appSettings.TEST_MODE) return staticDataRecommended.results;
 
 		try {
 			const response = await fetch(
@@ -37,9 +38,17 @@ export default class Movies {
 				options
 			);
 			const data = await response.json();
-			return data.results;
+			const filteredData = filterResults(data.results);
+			return filteredData;
 		} catch (error) {
 			console.log(`Error: ${error.message}`);
 		}
 	}
+}
+
+function filterResults(array) {
+	const filteredData = array.filter((item) => {
+		return item.vote_count >= appSettings.MIN_VOTES_COUNT;
+	});
+	return filteredData;
 }
