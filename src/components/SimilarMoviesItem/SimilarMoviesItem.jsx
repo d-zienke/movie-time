@@ -8,15 +8,16 @@ export default function SimilarMoviesItem({
 }) {
 	return (
 		<>
-			<div className={s.similar_movie}>
+			<div className={s.similar_movie} title={title}>
 				<img
+					className={s.similar_movie__image}
 					src={backdrop}
-					title={title}
 					alt={`${title} - backdrop`}
 					onClick={() => {
 						handleClick(movieObject);
 					}}
 				/>
+				<span className={s.similar_movie__title}>{title}</span>
 			</div>
 		</>
 	);

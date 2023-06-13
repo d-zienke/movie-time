@@ -1,20 +1,35 @@
   .similar_movie {
-    display: inline-block;
+    display: inl;
+    justify-content: center;
+    min-width: 25rem;
+    max-width: 300px;
+
     background-color: black;
     box-shadow: 1px 1px 10px rgba(94, 94, 94, 0.295);
-    min-width: 300px;
     cursor: pointer;
+    position: relative;
 
-    @media screen and (max-width:950px) {
-      min-width: 250px;
-    }
 
-    @media screen and (max-width:425px) {
-      min-width: 200px;
-    }
-
-    & img {
-      height: 100%;
+    &__image {
+      width: 100%;
       object-fit: cover;
+    }
+
+    &__title {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      
+      padding-left: 1rem;
+      width: 100%;
+      max-width: 100%;
+      overflow: hidden;
+
+      word-break: keep-all;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+
+      background-color: rgba(0, 0, 0, 0.6);
+      font-size: 1.5rem;
     }
   }
