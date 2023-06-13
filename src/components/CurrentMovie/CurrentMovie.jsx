@@ -23,12 +23,12 @@ export default function CurrentMovie({ movie }) {
 			<main
 				className={s.movie}
 				style={{
-					background: `no-repeat center/cover url(${getBackdrop()})`,
+					backgroundImage: `url(${getBackdrop()})`,
 				}}>
 				<div className={s.movie__header}>
 					<div className={s.movie__title}>
 						<span>{movie.title}</span>
-						<span>{getYear()}</span>
+						<span>{` ${getYear()}`}</span>
 					</div>
 					<MovieRating
 						ratingData={{
@@ -38,8 +38,10 @@ export default function CurrentMovie({ movie }) {
 					/>
 				</div>
 				<div className={s.movie__footer}>
-					<div className={s.movie__description}>{movie.overview}</div>
-					<a className={s.movie__button_outline}>show more</a>
+					<div className={s.movie__description}>
+						<p>{movie.overview}</p>
+					</div>
+					{/* <a className={s.movie__button_outline}>show more</a> */}
 				</div>
 			</main>
 		</>

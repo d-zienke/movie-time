@@ -4,8 +4,18 @@
   justify-content: space-between;
   flex-grow: 2;
 
+  max-width: 100%;
+  width: 100%;
+
   color: white;
-  // background: no-repeat center/cover url(https://images4.alphacoders.com/860/thumb-1920-86098.jpg);
+  background-color: #000000;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  
+  @media screen and (max-width:768px) {
+    background-position: center;
+  }
 
   &__header {
     display: flex;
@@ -19,24 +29,8 @@
 
   &__title {
     font-size: 2.5rem;
+
   }
-
-  // &__details {
-  //   display: flex;
-  //   flex-direction: column;
-  //   padding-right: 2.5rem;
-
-  //   &_top {
-  //     display: flex;
-  //     column-gap: 1.25rem;
-  //   }
-
-  //   &_btm {
-  //     display: flex;
-  //     column-gap: .6rem;
-  //     font-size: 1.25rem;
-  //   }
-  // }
 
   &__stars {
     display: flex;
@@ -53,8 +47,12 @@
     flex-direction: column;
     justify-content: flex-end;
     height: 20%;
+    max-height: 20%;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
     padding-bottom: 5rem;
+    overflow: hidden;
+    overflow-y: auto;
+    
   }
 
   &__description {
@@ -62,6 +60,16 @@
     font-size: 1.9rem;
     margin-bottom: 1rem;
     width: 70%;
+    overflow-y: auto;
+
+    @media screen and (max-width:950px) {
+        max-height: 150px;
+      }
+
+    @media screen and (max-width:768px) {
+        width: 100%;
+        max-width: 90%;
+      }
   }
 
   &__button_outline {
@@ -75,5 +83,4 @@
     align-self: flex-end;
     margin-right: 3.1rem;
   }
-
 }

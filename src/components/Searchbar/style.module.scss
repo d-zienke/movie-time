@@ -2,10 +2,14 @@
   position: relative;
   display: flex;
   align-items: center;
-  margin-left: auto;
-  margin-right: 10rem;
+  margin-left: 2rem;
+  margin-right: 5rem;
   width: 40%;
   height: 3.75rem;
+
+    @media screen and (max-width:950px) {
+      margin-inline: 2rem;
+    }
 
   &__input {
     background-color: rgba(206, 206, 206, 0.5);
