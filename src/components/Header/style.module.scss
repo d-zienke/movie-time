@@ -3,8 +3,7 @@
   justify-content: space-between;
   align-items: flex-start;
   padding-top: 2.5rem;
-  // padding-bottom: 0.5rem;
-  max-height: 6.6rem;
+  height: 10%;
 
   background-color: black;
 
@@ -13,11 +12,19 @@
     width: auto;
     padding-left: 4rem;
     cursor: pointer;
+
+    @media screen and (max-width:950px) {
+      padding-left: 2.5rem;
+    }
   }
 
   &__menu_icon {
     height: 3.1rem;
     padding-right: 3.75rem;
     cursor: pointer;
+
+    @media screen and (max-width:950px) {
+      padding-right: 2.5rem;
+    }
   }
 }

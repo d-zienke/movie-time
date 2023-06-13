@@ -5,9 +5,16 @@
     min-width: 300px;
     cursor: pointer;
 
+    @media screen and (max-width:950px) {
+      min-width: 250px;
+    }
+
+    @media screen and (max-width:425px) {
+      min-width: 200px;
+    }
+
     & img {
       height: 100%;
-      width: 300px;
       object-fit: cover;
     }
   }
