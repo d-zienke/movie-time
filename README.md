@@ -2,8 +2,6 @@
 
 _Movie Time_ is a web app that may help you find interesting movies.
 
-**Project is not done yet**
-
 ## Table of Contents
 
 - [Preview](#features)
@@ -29,6 +27,7 @@ Mobile:
 
 - on load, display the most popular movie
 - display movies similar to the currently selected one
+- search by title
 
 All the data come from [**The Movie Database (TMDB) API**](https://developer.themoviedb.org/docs)
 
@@ -43,7 +42,6 @@ All the data come from [**The Movie Database (TMDB) API**](https://developer.the
 ## Planned Features
 
 - on load, display a _randomly picked_ movie and similar productions below
-- searching by title
 - displaying list of the newest, most popular or upcoming movies
 - searching by genre
 - browsing TV shows

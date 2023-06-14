@@ -7,6 +7,10 @@
   width: 40%;
   height: 3.75rem;
 
+    @media screen and (max-width:1024px) {
+      width: 60%;
+    }
+
     @media screen and (max-width:950px) {
       margin-inline: 2rem;
     }

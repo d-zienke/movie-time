@@ -4,7 +4,11 @@ import Searchbar from "../Searchbar/Searchbar";
 
 import s from "./style.module.scss";
 
-export function Header({ searchTitle, query }) {
+export function Header({ searchTitle, query, changeSearchMode }) {
+	function returnToMainPage() {
+		changeSearchMode(false);
+		searchTitle("");
+	}
 	return (
 		<>
 			<header className={s.header}>
@@ -12,9 +16,10 @@ export function Header({ searchTitle, query }) {
 					className={s.header__logo}
 					src={logo}
 					alt="Logo of Movie Time app"
+					onClick={returnToMainPage}
 				/>
 				<Searchbar searchTitle={searchTitle} query={query} />
-				<img className={s.header__menu_icon} src={menuClosedIcon} alt="" />
+				{/* <img className={s.header__menu_icon} src={menuClosedIcon} alt="" /> */}
 			</header>
 		</>
 	);

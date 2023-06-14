@@ -11,7 +11,7 @@ export default function App() {
 		const topRatedMovies = await Movies.fetchTopRated();
 		if (topRatedMovies.length > 0) {
 			setCurrentMovie(topRatedMovies[0]);
-			// getRecommendedMovies(currentMovie.id);
+			setSearchMode(false);
 		}
 	}
 
@@ -19,6 +19,7 @@ export default function App() {
 		const recommendedMovies = await Movies.fetchRecommended(id);
 		if (recommendedMovies.length > 0) {
 			setRecommended(recommendedMovies);
+			setSearchMode(false);
 		}
 	}
 
@@ -43,7 +44,7 @@ export default function App() {
 	useEffect(() => {
 		if (currentMovie) {
 			getRecommendedMovies(currentMovie.id);
-			setSearchMode(false);
+			setTitleSearch("");
 		}
 	}, [currentMovie]);
 
@@ -53,7 +54,11 @@ export default function App() {
 
 	return (
 		<div className="app">
-			<Header searchTitle={setTitleSearch} query={titleSearch} />
+			<Header
+				searchTitle={setTitleSearch}
+				query={titleSearch}
+				changeSearchMode={setSearchMode}
+			/>
 			{searchMode && searchResult && (
 				<SearchResults movies={searchResult} changeMovie={setCurrentMovie} />
 			)}

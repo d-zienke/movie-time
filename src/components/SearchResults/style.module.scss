@@ -4,9 +4,11 @@
   max-height: 90%;
 
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  // justify-content: center;
+  // grid-template-columns: repeat(auto-fill, 200px);
+  justify-content: start;
   grid-template-rows: auto;
-  justify-content: center;
   justify-items: start;
   align-items: start;
   gap: 5rem 6.25rem;
